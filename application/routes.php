@@ -42,11 +42,13 @@ Route::get('/login', function()
 	return View::make('home.login');
 });
 
-Route::get('/home', function()
-{
-	return View::make('home.index');
-});
+// Route::get('/home', function()
+// {
+// 	return View::make('home.index');
+// });
 
+// Home
+Route::controller('home');
 Route::get('user/(:num)/(:num)', function($id, $id2)
 {
 	var_dump($id);
