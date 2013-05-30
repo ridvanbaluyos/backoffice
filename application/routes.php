@@ -32,28 +32,39 @@
 |
 */
 
+// Root URL
 Route::get('/', function()
 {
-	return Redirect::to('login');
+	if (1) // user is logged in
+	{
+		return Redirect::to('home');
+	}
+	else
+	{
+		return Redirect::to('login');
+	}	
 });
 
-Route::get('/login', function()
-{
-	return View::make('home.login');
-});
+// Home Login
+Route::any('login', 'home@login');
 
-// Route::get('/home', function()
-// {
-// 	return View::make('home.index');
-// });
+// Home Index
+Route::any('home', 'home@index');
 
-// Home
-Route::controller('home');
+// Human Resources
+Route::get('human-resources/leave-request', 'hr.leaves@index');
+Route::get('human-resources/employee-list', 'hr.employees@index');
+Route::get('human-resources/employee-list/add', 'hr.employees@add');
+
+
+// Test Routes 
 Route::get('user/(:num)/(:num)', function($id, $id2)
 {
 	var_dump($id);
 	var_dump($id2);
 });
+
+//Route::controller(Controller::detect());
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

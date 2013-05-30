@@ -1,5 +1,6 @@
 @layout('layouts.main')
 @section('content')
-Leave Request Form
+
+{{ Form::file('image'); }}
 
 @endsection

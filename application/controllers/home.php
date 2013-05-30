@@ -32,7 +32,22 @@ class Home_Controller extends Base_Controller {
 
 	public function action_index()
 	{
+		Section::inject('title', 'Backoffice - Home');
 		return View::make('home.index');
+	}
+
+	public function action_login()
+	{
+		Section::inject('title', 'Backoffice - Login');
+		if (0) // already logged in
+		{
+			return Redirect::to('home');
+		}
+		else
+		{
+			return View::make('home.login');
+		}
+		
 	}
 
 }
