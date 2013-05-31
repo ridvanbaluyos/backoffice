@@ -1,6 +1,6 @@
 @layout('layouts.main')
 @section('content')
-<button type="button" class="btn btn-success">Add New Employee</button> <br/><br/>
+<button type="button" class="btn btn-info btn-small" onclick="location.href='/human-resources/employee-list/add';">Add New Employee</button> <br/><br/>
 <table class="table table-condensed">
 	<thead>
 		<tr>
@@ -14,7 +14,7 @@
 	</thead>
 	<tbody>
 		<tr align="">
-			<td><a href="#">132</a></td>
+			<td><a href="#">N-120910-0095</a></td>
 			<td>Baluyos</td>
 			<td>Ridvan</td>
 			<td>Software Engineer</td>

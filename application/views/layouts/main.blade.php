@@ -10,6 +10,9 @@
     <!-- Le styles -->
     <?php echo HTML::style('css/bootstrap.css'); ?>
     <?php echo HTML::style('css/bootstrap-responsive.css'); ?>
+    <?php echo HTML::style('css/datepicker.css'); ?>
+
+    <?php echo HTML::script('js/jquery-1.10.0.min.js'); ?>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -41,16 +44,16 @@
                         	<ul class="dropdown-menu">
                         		<!-- <li class="divider"></li> -->
                         		<li class="nav-header">Request Forms</li>
-                          		<li><a href="human-resources/leave-request">Leave Request</a></li>
-                          		<li><a href="human-resources/official-business-and-overtime-request">Official Business &amp; Overtime Request</a></li>
-                          		<li><a href="human-resources/work-from-home-request">Work from Home Request</a></li>
+                          		<li><a href="/human-resources/leave-request">Leave Request</a></li>
+                          		<li><a href="/human-resources/official-business-and-overtime-request">Official Business &amp; Overtime Request</a></li>
+                          		<li><a href="/human-resources/work-from-home-request">Work from Home Request</a></li>
                           		<!-- <li class="nav-header">Admministration</li> -->
-                          		<li><a href="human-resources/personnel-requisition-request">Personnel Requisition Request</a></li>
-                          		<li><a href="human-resources/company-loan-request">Company Loan Request</a></li>
-                          		<li><a href="human-resources/colleages-diary">Colleague's Diary</a></li>
+                          		<li><a href="/human-resources/personnel-requisition-request">Personnel Requisition Request</a></li>
+                          		<li><a href="/human-resources/company-loan-request">Company Loan Request</a></li>
+                          		<li><a href="/human-resources/colleages-diary">Colleague's Diary</a></li>
                               <li class="divider"></li>
                               <li class="nav-header">Configuration</li>
-                              <li><a href="human-resources/employee-list">Employee List</a></li>
+                              <li><a href="/human-resources/employee-list">Employee List</a></li>
                         	</ul>
                   		</li>
                     </ul>
@@ -86,8 +89,17 @@
                     <ul class="nav pull-right">
                       	<li class="divider-vertical"></li>
                       	<form class="navbar-search pull-left" action="">
-	                      <input type="text" class="search-query span2" placeholder="Search">
-	                    </form>
+	                       <input type="text" class="search-query span2" placeholder="Search">
+	                     </form>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge badge-warning">10</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="icon-arrow-up"></i> Up</a></li>
+                                <li><a href="#"><i class="icon-arrow-down"></i> Down</a></li>
+                                <li><a href="#"><i class="icon-arrow-left"></i> Left</a></li>
+                                <li><a href="#"><i class="icon-arrow-right"></i> Right</a></li>
+                            </ul>
+                        </li>
                       	<li class="dropdown">
                         	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ridvan Baluyos <b class="caret"></b></a>
                         	<ul class="dropdown-menu">
@@ -103,7 +115,7 @@
     </div>
 
     <!-- container -->
-    <div class="container">
+    <div class="container-fluid">
 	    <ul class="breadcrumb">
 		  	<li><a href="#">Home</a> <span class="divider">/</span></li>
 		  	<li class="active">Dashboard</li>
@@ -115,7 +127,10 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <?php echo HTML::script('js/jquery-1.10.0.min.js'); ?>
+    
     <?php echo HTML::script('js/bootstrap.min.js'); ?>
+    <?php echo HTML::script('js/bootstrap-datepicker.js'); ?>
+    
+    
   </body>
 </html>
