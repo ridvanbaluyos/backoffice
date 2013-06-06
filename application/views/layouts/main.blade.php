@@ -87,19 +87,19 @@
                     
                     <!-- Profile Preferences -->
                     <ul class="nav pull-right">
-                      	<li class="divider-vertical"></li>
-                      	<form class="navbar-search pull-left" action="">
+                      	<!-- <li class="divider-vertical"></li> -->
+                      	<!-- <form class="navbar-search pull-left" action="">
 	                       <input type="text" class="search-query span2" placeholder="Search">
-	                     </form>
+	                     </form> -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge badge-warning">10</span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge badge-important">10</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="icon-arrow-up"></i> Up</a></li>
-                                <li><a href="#"><i class="icon-arrow-down"></i> Down</a></li>
-                                <li><a href="#"><i class="icon-arrow-left"></i> Left</a></li>
-                                <li><a href="#"><i class="icon-arrow-right"></i> Right</a></li>
+                                <li><a href="#"><span class="badge badge-warning">1</span> Pending Leave Request</a></li>
+                                <li><a href="#"><span class="badge badge-success">2</span> Approved Leave Request</a></li>
+                                <li><a href="#"><span class="badge badge-important">2</span> Denied OT/OB Request</a></li>
                             </ul>
                         </li>
+                        <li class="divider-vertical"></li>
                       	<li class="dropdown">
                         	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Ridvan Baluyos <b class="caret"></b></a>
                         	<ul class="dropdown-menu">
@@ -129,6 +129,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     
     <?php echo HTML::script('js/bootstrap.min.js'); ?>
+    <?php echo HTML::script('js/helpers.js'); ?>
     <?php echo HTML::script('js/bootstrap-datepicker.js'); ?>
     
     

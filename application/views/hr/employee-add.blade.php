@@ -3,7 +3,30 @@
 <script type="text/javascript">
 $(document).ready(function(namespace)
 {
-	$('#employee_datehired').datepicker();
+	$('#employee_datehired').datepicker()
+		.on('changeDate', function(ev) {
+			var unixtime = ev.date.valueOf();
+			var date = new Date(unixtime);
+			
+			// year
+			var year = date.getFullYear() - 2000; // fetch only last 2 digits
+			year = (year < 10) ? '0' + year.toString() :  year.toString();
+
+			// month
+			var month = date.getMonth() + 1; // jan = 0
+			month = (month < 10) ? '0' + month.toString() : month.toString();
+
+			// date
+			var day = date.getDate();
+			day = (day < 10) ? '0' + day.toString() : day.toString();
+
+			var dateHired = year + month + day;
+			var rand = Math.floor((Math.random()*1000)+1).toString();
+
+			var suggestedEmployeeNumber = dateHired + '-' + Helper.lpad(rand, 4, '0');
+			$('#employee_number').val(suggestedEmployeeNumber);
+		
+	});
 });
 </script>
 <fieldset>
@@ -24,20 +47,15 @@ $(document).ready(function(namespace)
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="employee_nickname">Status:</label>
+				<label class="control-label" for="employee_status">Status:</label>
 				<div class="controls">
-					<label class="radio inline">
-					  	<input type="radio" name="status" id="single" value="single" />Single
-					</label>
-					<label class="radio inline">
-						<input type="radio" name="status" id="married" value="married" />Maried
-					</label>
-					<label class="radio inline">
-						<input type="radio" name="status" id="separated" value="separated" />Separated
-					</label>
-					<label class="radio inline">
-						<input type="radio" name="status" id="widowed" value="widowed" />Widowed
-					</label>
+					<select name="employee_status">
+						<option>[Choose Status]</option>	
+						<option>Single</option>		
+					  	<option>Married</option>
+					  	<option>Separated</option>
+					  	<option>Widowed</option>
+					</select>
 				</div>
 			</div>
 			<div class="control-group">
@@ -75,13 +93,19 @@ $(document).ready(function(namespace)
 			<div class="control-group">
 				<label class="control-label" for="employee_homenumber">Home #:</label>
 				<div class="controls">
-					<input type="text" id="employee_homenumber" placeholder="" />
-				</div>
+					<div class="input-prepend">
+						<span class="add-on">+632</span>
+				  		<input class="span2" id="employee_homenumber" type="text" maxlength="10" />
+				  	</div>
+			 	</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="employee_personalnumber">Mobile #:</label>
 				<div class="controls">
-					<input type="text" id="employee_personalnumber" placeholder="" />
+					<div class="input-prepend">
+						<span class="add-on">+63</span>
+				  		<input class="span2" id="employee_personalnumber" type="text" maxlength="10" />
+				  	</div>
 				</div>
 			</div>
 			<div class="control-group">
@@ -132,32 +156,9 @@ $(document).ready(function(namespace)
 						<span class="add-on btn-info"><i class="icon-calendar"></i></span>
 				  	</div>
 				</div>
-			</div>
+			</div>			
 			<div class="control-group">
-				<label class="control-label" for="employee_type">Probationary?</label>
-				<div class="controls">
-					<label class="checkbox inline">
-					  	<input type="checkbox" id="employee_type" value="probationary">Yes
-					</label>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="employee_email">Work Email:</label>
-				<div class="controls">
-					<div class="input-append">
-						  <input class="span2" id="employee_email" type="text" />
-						  <span class="add-on">@sulit.com.ph</span>
-					</div>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="employee_worknumber">Work Phone:</label>
-				<div class="controls">
-				  	<input class="span2" id="employee_worknumber" type="text" />
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="employee_number">Department:</label>
+				<label class="control-label" for="employee_department">Department:</label>
 				<div class="controls">
 					<select>
 						<option>[Choose Department]</option>		
@@ -172,7 +173,7 @@ $(document).ready(function(namespace)
 				</div>
 			</div>
 			<div class="control-group">
-				<label class="control-label" for="employee_number">Position:</label>
+				<label class="control-label" for="employee_position">Position:</label>
 				<div class="controls">
 					<select>
 						<option>[Choose Position]</option>
@@ -235,13 +236,38 @@ $(document).ready(function(namespace)
 					<select name="employee_reportsto">
 						<option>[Choose Person]</option>		
 					  	<option>Romelo Noel Santos</option>
-					  	<option>Rey Ner</option>
+					  	<option>Rey Anthony Ner</option>
 					  	<option>Me-Anne Bundalian</option>
 					  	<option>Nedy Roan</option>
 					  	<option>Mylen Pascual</option>
 					  	<option>Almer John Viloria</option>
-					  	
 					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="employee_type">Probationary?</label>
+				<div class="controls">
+					<label class="checkbox inline">
+					  	<input type="checkbox" id="employee_type" value="probationary">Yes
+					</label>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="employee_type">Sick Leave Credits:</label>
+				<div class="controls">
+					<input type="text" class="span1" id="employee_sl" maxlength="2" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="employee_type">Vacation Leave Credits:</label>
+				<div class="controls">
+					<input type="text" class="span1" id="employee_vl" maxlength="2" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="employee_type">Emergency Leave Credits:</label>
+				<div class="controls">
+					<input type="text" class="span1" id="employee_el" maxlength="2" />
 				</div>
 			</div>
 		</div>
@@ -249,13 +275,31 @@ $(document).ready(function(namespace)
 			<div class="control-group">
 				<label class="control-label" for="employee_number">Employee #:</label>
 				<div class="controls">
-					<input type="text" id="employee_number" placeholder="" />
+					<div class="input-prepend">
+						<span class="add-on">N-</span>
+						<input type="text" id="employee_number" placeholder="" />
+					</div>
 				</div>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="employee_biometricsnumber">Biometrics #:</label>
 				<div class="controls">
 					<input type="text" id="employee_biometricsnumber" placeholder="" />
+				</div>
+			</div>			
+			<div class="control-group">
+				<label class="control-label" for="employee_email">Work Email:</label>
+				<div class="controls">
+				  	<input class="span2" id="employee_email" type="text" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="employee_worknumber">Work Phone:</label>
+				<div class="controls">
+					<div class="input-prepend">
+						<span class="add-on">+63</span>
+				  		<input class="span2" id="employee_worknumber" type="text" maxlength="10" />
+				  	</div>
 				</div>
 			</div>
 			<div class="control-group">
@@ -275,15 +319,15 @@ $(document).ready(function(namespace)
 				<div class="controls">
 					<input type="text" id="employee_sss" placeholder="" />
 				</div>
-			</div>
+			</div>	
 		</div>
 	</div>
 	<div class="row">
 		<div class="control-group">
 				<label class="control-label" for=""></label>
 				<div class="controls">
-					<button type="submit" class="btn btn-small btn-danger">Submit</button>
-					<button type="submit" class="btn btn-small">Cancel</button>
+					<button type="submit" class="btn btn-small btn-success">Submit</button>
+					<button type="button" class="btn btn-small" onclick="location.href='/human-resources/employee-list';">Cancel</button>
 				</div>
 			</div>
 	</div>
