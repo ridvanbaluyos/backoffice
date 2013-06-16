@@ -13,10 +13,10 @@ $(document).ready(function(namespace)
 <div class="row">
 	<div class="span12">
 		<div class="pull-left">
-			<button type="button" class="btn btn-success btn-small" onclick="location.href='/human-resources/employee-list/add';">New Employee</button>
+			<button type="button" class="btn btn-success btn-small" onclick="location.href='/human-resources/employees/add';">New Employee</button>
 		</div>
 	</div>
-</div>
+</div><br/>
 <div class="row">
 	<div class="span12">
 		<table class="table table-condensed table-striped table-hover">
@@ -32,24 +32,24 @@ $(document).ready(function(namespace)
 			</thead>
 			<tbody>
 				<tr align="">
-					<td><a href="/human-resources/employee-list/edit/N-120910-0095">N-120910-0095</a></td>
+					<td><a href="/human-resources/employees/view/N-120910-0095">N-120910-0095</a></td>
 					<td>Baluyos</td>
 					<td>Ridvan Lakas ng Bayan</td>
 					<td>Software Engineer</td>
 					<td>Technical</td>
 					<td align="center">
-						<a href="#"><i class="icon-pencil"></i></a>
+						<a href="/human-resources/employees/edit/N-120910-0095"><i class="icon-pencil"></i></a>
 						<a href="#"><i class="icon-remove"></i></a>
 					</td>
 				</tr>
 				<tr align="">
-					<td><a href="#">N-110516-0052</a></td>
+					<td><a href="/human-resources/employees/view/N-110516-0052">N-110516-0052</a></td>
 					<td>Bangug</td>
 					<td>Frederick Stephen</td>
 					<td>Software Engineer</td>
 					<td>Technical</td>
 					<td align="center">
-						<a href="#"><i class="icon-pencil"></i></a>
+						<a href="/human-resources/employees/edit/N-110516-0052"><i class="icon-pencil"></i></a>
 						<a href="#" id="delete_employee"><i class="icon-remove"></i></a>
 					</td>
 				</tr>

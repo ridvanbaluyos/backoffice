@@ -1,7 +1,12 @@
 @layout('layouts.main')
 @section('content')
-<h3>Welcome, Ridvan Lakas ng Bayan!</h3>
-<br/>
+<div class="row">
+  <div class="span12">
+    <div class="pull-left">
+      <button type="button" class="btn btn-success btn-small" onclick="location.href='/human-resources/leaves/add';">New Request</button>
+    </div>
+  </div>
+</div><br/>
 <div class="row">
   <div class="span12">
     <table class="table table-condensed table-striped table-hover">

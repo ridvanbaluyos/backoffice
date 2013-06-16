@@ -52,17 +52,26 @@ $(document).ready(function(namespace)
 			diff = diff - 0.5;
 		}
 
-		$('#leave_duration').html(diff);
+		$('#leave_summary_duration').html(diff);
 		console.log(diff);
 
 	}
 });
 </script>
 <fieldset>
-<legend>Leave Request</legend>
+<legend>Leave Request - <?php echo ($values['button_submit'] === 'Save') ? 'Add' : 'Edit'; ?></legend>
 <form class="form-horizontal">
 	<div class="row">
 		<div class="span7">
+			<?php if ($values['reference_number']): ?>
+			<div class="control-group">
+				<label class="control-label" for="leave_type">Reference #:</label>
+				<div class="controls">
+					<input type="text" readonly="readonly" id="leave_reason" value="<?php echo $values['reference_number']; ?>" />
+	
+				</div>
+			</div>
+			<?php endif; ?>
 			<div class="control-group">
 				<label class="control-label" for="leave_type">Type:</label>
 				<div class="controls">
@@ -133,7 +142,7 @@ $(document).ready(function(namespace)
 		<div class="control-group">
 				<label class="control-label" for=""></label>
 				<div class="controls">
-					<button type="submit" class="btn btn-small btn-success">Submit</button>
+					<button type="submit" class="btn btn-small btn-success"><?php echo $values['button_submit']; ?></button>
 					<button type="button" class="btn btn-small" onclick="location.href='/human-resources/leaves';">Cancel</button>
 				</div>
 			</div>

@@ -30,7 +30,7 @@ $(document).ready(function(namespace)
 });
 </script>
 <fieldset>
-<legend>Add Employee</legend>
+<legend><?php echo ($values['button_submit'] === 'Save') ? 'Add' : 'Edit'; ?> Employee</legend>
 <form class="form-horizontal">
 	<h4>Personal Information</h4>
 	<div class="row">
@@ -326,7 +326,7 @@ $(document).ready(function(namespace)
 		<div class="control-group">
 				<label class="control-label" for=""></label>
 				<div class="controls">
-					<button type="submit" class="btn btn-small btn-success">Submit</button>
+					<button type="submit" class="btn btn-small btn-success"><?php echo $values['button_submit']; ?></button>
 					<button type="button" class="btn btn-small" onclick="location.href='/human-resources/employee-list';">Cancel</button>
 				</div>
 			</div>

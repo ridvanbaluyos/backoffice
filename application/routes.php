@@ -52,9 +52,17 @@ Route::any('login', 'home@login');
 Route::any('home', 'home@index');
 
 // Human Resources
-Route::get('human-resources/leave-request', 'hr.leaves@index');
-Route::get('human-resources/employee-list', 'hr.employees@index');
-Route::get('human-resources/employee-list/add', 'hr.employees@add');
+Route::get('human-resources/leaves', 'hr.leaves@index');
+Route::get('human-resources/leaves/list', 'hr.leaves@index');
+Route::get('human-resources/leaves/add', 'hr.leaves@add');
+Route::get('human-resources/leaves/edit/(:any)', 'hr.leaves@edit');
+Route::get('human-resources/leaves/view/(:any)', 'hr.leaves@view');
+
+Route::get('human-resources/employees', 'hr.employees@index');
+Route::get('human-resources/employees/list', 'hr.employees@index');
+Route::get('human-resources/employees/add', 'hr.employees@add');
+Route::get('human-resources/employees/edit/(:any)', 'hr.employees@edit');
+Route::get('human-resources/employees/view/(:any)', 'hr.employees@view');
 
 
 // Test Routes 

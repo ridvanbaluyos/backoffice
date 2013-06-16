@@ -6,9 +6,9 @@ Helper.lpad = function (number, size, symbol)
 {
   	number = number.toString();
   	while (number.length < size) 
-		{
-			number = symbol + number;
-		}
+	{
+		number = symbol + number;
+	}
 
   	return number;
 }
@@ -18,9 +18,9 @@ Helper.rpad = function (number, size, symbol)
 {
   	number = number.toString();
   	while (number.length < size) 
-		{
-			number = number + symbol;
-		}
+	{
+		number = number + symbol;
+	}
 
   	return number;
 }
