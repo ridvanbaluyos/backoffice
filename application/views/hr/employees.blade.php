@@ -32,7 +32,7 @@ $(document).ready(function(namespace)
 			</thead>
 			<tbody>
 				<tr align="">
-					<td><a href="/human-resources/employees/view/N-120910-0095">N-120910-0095</a></td>
+					<td><a href="/human-resources/employees/edit/N-120910-0095">N-120910-0095</a></td>
 					<td>Baluyos</td>
 					<td>Ridvan Lakas ng Bayan</td>
 					<td>Software Engineer</td>
@@ -43,7 +43,7 @@ $(document).ready(function(namespace)
 					</td>
 				</tr>
 				<tr align="">
-					<td><a href="/human-resources/employees/view/N-110516-0052">N-110516-0052</a></td>
+					<td><a href="/human-resources/employees/edit/N-110516-0052">N-110516-0052</a></td>
 					<td>Bangug</td>
 					<td>Frederick Stephen</td>
 					<td>Software Engineer</td>

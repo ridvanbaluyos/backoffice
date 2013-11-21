@@ -137,12 +137,13 @@ $(document).ready(function(namespace)
 					<input type="text" id="employee_emergencyrelationship" placeholder="" />
 				</div>
 			</div>
-			<div class="control-group">
-				<label class="control-label" for="employee_emergencycontactnumber">Contact #:</label>
+			<label class="control-label" for="employee_emergencycontact">Contact #:</label>
 				<div class="controls">
-					<input type="text" id="employee_emergencycontactnumber" placeholder="" />
-				</div>
-			</div>
+					<div class="input-prepend">
+						<span class="add-on">+63</span>
+				  		<input class="span2" id="employee_emergencycontact" type="text" maxlength="10" />
+				  	</div>
+			 	</div>
 		</div>
 	</div>
 	<h4>Work Information</h4>
